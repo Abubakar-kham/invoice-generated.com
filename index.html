@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Invoice Generator</h1>
+
+    <form id="invoiceForm">
+      <h2>Your Information</h2>
+      <div class="row">
+        <input type="text" placeholder="Your Name" id="yourName" required>
+        <input type="text" placeholder="Your Address" id="yourAddress" required>
+        <input type="email" placeholder="Your Email" id="yourEmail">
+        <input type="tel" placeholder="Your Phone" id="yourPhone">
+      </div>
+
+      <h2>Client Information</h2>
+      <div class="row">
+        <input type="text" placeholder="Client Name" id="clientName" required>
+        <input type="text" placeholder="Client Address" id="clientAddress" required>
+        <input type="email" placeholder="Client Email" id="clientEmail">
+        <input type="tel" placeholder="Client Phone" id="clientPhone">
+      </div>
+
+      <h2>Invoice Details</h2>
+      <div class="row">
+        <input type="text" placeholder="Invoice Number" id="invoiceNumber" required>
+        <input type="date" placeholder="Date" id="invoiceDate" required>
+      </div>
+
+      <h3>Item List</h3>
+      <div id="itemsContainer"></div>
+      <button type="button" id="addItemBtn">+ Add Item</button>
+
+      <div class="total-area">
+        <strong>Total: $<span id="totalAmount">0</span></strong>
+      </div>
+
+      <button type="submit">Generate Invoice</button>
+      <button type="button" id="downloadPDF" style="display:none;">Download PDF</button>
+    </form>
+
+    <div id="invoiceOutput" class="invoice-output"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
